@@ -1,0 +1,34 @@
+/* @import fonts */
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+    background: #fff;
+}
+
+.impress-supported .fallback-message {
+  display: none;
+}
+
+
+.step {
+  font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;
+  width: 95vw;
+  height: 90vh;
+  border: 1px dotted black;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.step.prev {
+  opacity: 0.2;
+}
+
+
+.impress-enabled .step.active { opacity: 1 }
+
+.step.active {
+  opacity: 1;
+}
