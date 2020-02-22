@@ -1,8 +1,10 @@
+"use strict";
+
 let params = new URLSearchParams(location.search);
 const defaults = {
   'user': 'ggstuart',
-  'repo': 'discourse-analysis',
-  'file': 'presentation_example.md'
+  'repo': 'impress-wiki',
+  'file': 'Home.md'
 }
 
 for (const property in defaults) {
@@ -16,7 +18,6 @@ const url = `${root}/${params.get("file")}`;
 const slides = document.querySelector("#impress");
 
 function init() {
-  let event = new Event('MarkdownPrepared');
   fetch(url).then(function(response) {
     return response.text();
   }).then(loadMultiple).then(function(mds) {
@@ -24,6 +25,7 @@ function init() {
       const div = markdownSection(md);
       slides.appendChild(div);
     }
+    let event = new Event('MarkdownPrepared');
     window.dispatchEvent(event);
   }).catch(function(err) {
     console.log("Fetch Error: ", err);
@@ -31,9 +33,12 @@ function init() {
 }
 
 async function loadMultiple(text) {
-  const files = text.trim().split("\n").slice(1);
-  const promises = files.map(loadFile);
-  return Promise.all(promises);
+  const pattern = /=====wiki-links=====/i
+  let links;
+  [text, links] = text.split(pattern);
+  links = links.trim().split("\n");
+  const promises = links.map(loadFile);
+  return Promise.all([text].concat(promises));
 }
 
 function loadFile(name) {

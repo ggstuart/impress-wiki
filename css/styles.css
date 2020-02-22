@@ -37,10 +37,13 @@ body {
 }
 
 .overview {
-  background-color: rgba(0,0,0,0.2)
-  padding: 5em;
+  background-color: rgba(0,0,0,0.2);
+  padding: 1em;
   font-size: 3em;
   text-align: center;
+  width: 960px;
+  height: 600px;
+  opacity: 1;
 }
 
 
