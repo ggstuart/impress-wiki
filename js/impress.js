@@ -1568,7 +1568,6 @@
               var element = markdownDivs[ idx ];
 
               var slides = element.textContent.split( /^-----$/m );
-              console.log(element.textContent);
               var i = slides.length - 1;
               element.innerHTML = markdown.toHTML( slides[ i ] );
 

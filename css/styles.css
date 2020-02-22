@@ -3,32 +3,56 @@
 body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
-    background: #fff;
+    background: #099;
 }
 
 .impress-supported .fallback-message {
   display: none;
 }
 
-
 .step {
   font-family: 'Open Sans', Arial, sans-serif;
-  position: relative;
-  width: 95vw;
-  height: 90vh;
-  border: 1px dotted black;
   box-sizing: border-box;
+  /* width: calc(100vw - 2em);
+  height: calc(100vh - 5em); */
   opacity: 0;
-  transition: opacity 1s;
 }
 
 .step.prev {
-  opacity: 0.2;
+  opacity: 0.1;
+}
+
+.impress-enabled .step.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+.markdown {
+  border-radius: 0.5em;
+  background-color: #033;
+  color: white;
+  padding: 2em 4em;
+  transition: opacity 1s;
+
+}
+
+.overview {
+  background-color: rgba(0,0,0,0.2)
+  padding: 5em;
+  font-size: 3em;
+  text-align: center;
 }
 
 
-.impress-enabled .step.active { opacity: 1 }
-
-.step.active {
-  opacity: 1;
+@media screen and (orientation: landscape) {
+  .markdown {
+    width: 960px;
+    height: 600px;
+  }
+}
+@media screen and (orientation: portrait) {
+  .markdown {
+    width: 600px;
+    height: 960px;
+  }
 }
