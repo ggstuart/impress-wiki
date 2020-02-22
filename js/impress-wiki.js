@@ -36,7 +36,11 @@ async function loadMultiple(text) {
   const pattern = /=====wiki-links=====/i
   let links;
   [text, links] = text.split(pattern);
-  links = links.trim().split("\n");
+  if(links) {
+    links = links.trim().split("\n");
+  } else {
+    links = [];
+  }
   const promises = links.map(loadFile);
   return Promise.all([text].concat(promises));
 }
