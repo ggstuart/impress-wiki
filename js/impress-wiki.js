@@ -4,7 +4,7 @@ let params = new URLSearchParams(location.search);
 const defaults = {
   'user': 'ggstuart',
   'repo': 'impress-wiki',
-  'file': 'Home.md'
+  'file': 'Home'
 }
 
 for (const property in defaults) {
@@ -14,7 +14,7 @@ for (const property in defaults) {
 }
 
 const root = `https://raw.githubusercontent.com/wiki/${params.get("user")}/${params.get("repo")}`
-const url = `${root}/${params.get("file")}`;
+const url = `${root}/${params.get("file")}.md`;
 const slides = document.querySelector("#impress");
 
 function init() {
