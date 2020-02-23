@@ -1592,6 +1592,41 @@
             }
         } // Markdown
 
+        if (window.showdown) {
+
+          var converter = new showdown.Converter();
+          // Query all .markdown elements and translate to HTML
+          var markdownDivs = document.querySelectorAll( ".markdown" );
+          for ( var idx = 0; idx < markdownDivs.length; idx++ ) {
+            var element = markdownDivs[ idx ];
+
+            var slides = element.textContent.split( /^-----$/m );
+            var i = slides.length - 1;
+            // element.innerHTML = markdown.toHTML( slides[ i ] );
+            element.innerHTML = converter.makeHtml( slides[ i ] );
+
+            // If there's an id, unset it for last, and all other, elements,
+            // and then set it for the first.
+            var id = null;
+            if ( element.id ) {
+              id = element.id;
+              element.id = "";
+            }
+            i--;
+            while ( i >= 0 ) {
+              var newElement = element.cloneNode( false );
+              // newElement.innerHTML = markdown.toHTML( slides[ i ] );
+              newElement.innerHTML = converter.makeHtml( slides[ i ] );
+              element.parentNode.insertBefore( newElement, element );
+              element = newElement;
+              i--;
+            }
+            if ( id !== null ) {
+              element.id = id;
+            }
+          }
+        }
+
         if ( window.hljs ) {
             hljs.initHighlightingOnLoad();
         }
