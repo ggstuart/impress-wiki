@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>CTEC 3905</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/github.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -12,9 +13,9 @@
       <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
     </div>
 
-    <div id="impress">
-      <div class="step overview" data-x="0" data-y="0" data-z="10000">
-        <h2>Lab wizard</h2>
+    <div id="impress" data-transition-duration="500">
+      <div class="step slide overview" data-x="0" data-y="0" data-z="1000">
+        <h2>Impress-wiki</h2>
         <p>This is still highly experimental</p>
         <p>Please be patient</p>
       </div>
@@ -22,6 +23,9 @@
 
     <div id="impress-toolbar"></div>
     <!-- <div id="impress-help"></div> -->
+
+    <!-- syntax highlighting -->
+    <script src="js/highlight.pack.js"></script>
 
     <!-- markdown plugin -->
     <!-- <script src="js/markdown.js"></script> -->
@@ -39,6 +43,7 @@
     <script>
       window.addEventListener('MarkdownPrepared', ev => {
         impress().init()
+        hljs.initHighlighting();
       })
     </script>
   </body>

@@ -58,9 +58,11 @@ function loadFile(name) {
 function markdownSection(text) {
   const div = document.createElement("div");
   div.classList.add('step');
+  div.classList.add('slide');
   div.classList.add('markdown');
-  div.setAttribute("data-rel-x", "1200");
-  div.setAttribute("data-rel-y", "0");
+  div.setAttribute("data-rel-x", "0");
+  div.setAttribute("data-rel-y", "700");
+  div.setAttribute("data-z", "0");
   div.textContent = text;
   return div;
 }
