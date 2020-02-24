@@ -61,7 +61,7 @@ function markdownSection(text) {
   div.classList.add('slide');
   div.classList.add('markdown');
   div.setAttribute("data-rel-x", "0");
-  div.setAttribute("data-rel-y", "700");
+  div.setAttribute("data-rel-y", "750");
   div.setAttribute("data-z", "0");
   div.textContent = text;
   return div;
