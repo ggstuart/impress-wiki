@@ -20,6 +20,9 @@ a > code {
   color: #00f;
 }
 
+h1, h2 {
+  margin: 0 0 0.25em 0;
+}
 
 .impress-supported .fallback-message {
   display: none;
