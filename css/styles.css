@@ -1,49 +1,59 @@
-/* @import fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
 
 body {
     font-family: 'PT Sans', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     min-height: 740px;
     background: #222;
 }
+
+code {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.8em;
+  background-color: #ddd;
+  padding: 2px;
+}
+
+a > code {
+  background-color: #ddf;
+  color: #00f;
+}
+
 
 .impress-supported .fallback-message {
   display: none;
 }
 
+.impress-on-overview .step {
+  opacity: 0.2;
+}
+
 .step {
-  font-family: 'Open Sans', Arial, sans-serif;
   box-sizing: border-box;
-  /* width: calc(100vw - 2em);
-  height: calc(100vh - 5em); */
-  opacity: 0;
+  opacity: 0.1;
+  font-size: 1.5em;
 }
 
 .step.prev {
-  opacity: 0.1;
+  opacity: 0.2;
 }
 
 .impress-enabled .step.active {
   opacity: 1;
   z-index: 10;
 }
-.slide {
-  font-size: 1em;
+
+.slide, .overview {
   border-radius: 0.5em;
-  background-color: white;
-  color: #033;
-  padding: 2em 4em;
+  padding: 1em 2em;
   transition: opacity 1s;
 }
 
-.markdown {
-}
-
-a {
-  color: inherit;
-}
-
 .overview {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 15px solid rgba(255, 255, 255, 0.2);
+  color: white;
   padding: 1em;
   font-size: 3em;
   text-align: center;
@@ -51,14 +61,101 @@ a {
 }
 
 
+.slide {
+  background-color: white;
+  color: #033;
+}
+
+.markdown {
+}
+
+
+
+/* custom highlight.js styles */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: hsl(50, 100%, 0%);
+  color: hsl(0, 100%, 100%);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: hsl(0, 0%, 50%);
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: hsl(0, 100%, 50%);
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: hsl(50, 100%, 50%);
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: hsl(120, 100%, 50%);
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: hsl(200, 100%, 50%);
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: hsl(250, 100%, 70%);
+}
+
+.hljs-built_in,
+.hljs-deletion {
+  color: hsl(300, 100%, 50%);
+}
+
+.hljs-formula {
+  color: hsl(0, 50%, 50%);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+
+
+
 @media screen and (orientation: landscape) {
-  .slide {
+  .slide, .overview{
     width: 960px;
     height: 600px;
   }
 }
 @media screen and (orientation: portrait) {
-  .slide {
+  .slide, .overview{
     width: 600px;
     height: 960px;
   }
