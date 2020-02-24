@@ -5,14 +5,22 @@ body {
     font-family: 'PT Sans', sans-serif;
     font-family: 'Open Sans', Arial, sans-serif;
     min-height: 740px;
-    background: #222;
+    background: #333;
+}
+
+pre {
+  margin: 0;
+}
+
+p {
+  margin: .7em 0;
 }
 
 code {
   font-family: "Courier Prime", monospace;
   font-size: 0.8em;
   background-color: #ddd;
-  padding: 2px;
+  /* padding: 2px; */
 }
 
 a > code {
