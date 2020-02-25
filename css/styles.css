@@ -12,10 +12,6 @@ pre {
   margin: 0;
 }
 
-p {
-  /* margin: .7em 0; */
-}
-
 code {
   font-family: "Courier Prime", monospace;
   font-size: 0.8em;
@@ -109,29 +105,29 @@ nav a:hover {
   color: #033;
 }
 
-.markdown {
-}
-
-
 
 /* custom highlight.js styles */
 .hljs {
+  font-size: 0.75em;
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  background: hsl(50, 100%, 0%);
-  color: hsl(0, 100%, 100%);
+  padding: 0.25em;
+  border-radius: 3px;
+  border: 0.25em solid hsl(150, 100%, 5%);
+  box-sizing: border-box;
+  background: hsl(150, 100%, 10%);
+  color: hsl(0, 100%, 95%);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: hsl(0, 0%, 50%);
+  color: hsl(150, 10%, 50%);
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-addition {
-  color: hsl(0, 100%, 50%);
+  color: hsl(50, 100%, 70%);
 }
 
 .hljs-number,
@@ -140,7 +136,7 @@ nav a:hover {
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-  color: hsl(50, 100%, 50%);
+  color: hsl(0, 100%, 70%);
 }
 
 .hljs-title,
@@ -148,7 +144,7 @@ nav a:hover {
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: hsl(120, 100%, 50%);
+  color: hsl(120, 100%, 80%);
 }
 
 .hljs-attribute,
@@ -157,7 +153,7 @@ nav a:hover {
 .hljs-template-variable,
 .hljs-class .hljs-title,
 .hljs-type {
-  color: hsl(200, 100%, 50%);
+  color: hsl(200, 100%, 70%);
 }
 
 .hljs-symbol,
@@ -168,7 +164,7 @@ nav a:hover {
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-link {
-  color: hsl(250, 100%, 70%);
+  color: hsl(250, 100%, 80%);
 }
 
 .hljs-built_in,
