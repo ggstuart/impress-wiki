@@ -43,6 +43,11 @@
       window.addEventListener('MarkdownPrepared', ev => {
         impress().init()
         hljs.initHighlighting();
+        const images = document.querySelectorAll("#impress img");
+        images.forEach(image => {
+          const src = image.attributes.src.value;
+          image.src = `${root}/${src}`;
+        });
       })
     </script>
   </body>
