@@ -1594,6 +1594,7 @@
 
         if (window.showdown) {
           showdown.setOption('tables', true);
+          showdown.setOption('parseImgDimension', true);
           var converter = new showdown.Converter();
           // Query all .markdown elements and translate to HTML
           var markdownDivs = document.querySelectorAll( ".markdown" );
