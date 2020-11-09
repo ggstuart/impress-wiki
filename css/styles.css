@@ -5,7 +5,15 @@
 body {
   font-family: 'PT Sans', sans-serif;
   min-height: 740px;
-  background: #333;
+  background-color: #443;
+  background-image: url(../images/CTEC3905.png);
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+body.impress-on-overview {
+  background-image: none;
 }
 
 pre {
@@ -64,7 +72,6 @@ td {
   border: 1px solid grey;
 }
 
-
 .impress-supported .fallback-message {
   display: none;
 }
@@ -104,6 +111,10 @@ td {
   opacity: 1;
   width: 450px;
   height: 700px;
+  background-image: url(../images/CTEC3905.png);
+  background-size: 350px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 }
 
 
@@ -236,7 +247,7 @@ body.impress-mobile .step.prev {
   }
   .overview {
     width: 500px;
-    height: 200px;
+    height: 400px;
   }
   nav a, nav span {
     flex-basis: 32%;
