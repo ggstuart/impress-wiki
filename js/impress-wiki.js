@@ -3,7 +3,8 @@
 let params = new URLSearchParams(location.search);
 const defaults = {
   'user': 'ggstuart',
-  'repo': 'impress-wiki',
+  'repo': 'impress-wiki.wiki',
+  'branch': 'master',
   'file': 'Home'
 }
 
@@ -13,7 +14,13 @@ for (const property in defaults) {
   }
 }
 
-const root = `https://raw.githubusercontent.com/wiki/${params.get("user")}/${params.get("repo")}`
+let root;
+if (params.get("repo").split('.')[1] == 'wiki') {
+  let repo = params.get("repo").split('.')[0]
+  root = `https://raw.githubusercontent.com/wiki/${params.get("user")}/${repo}`
+} else {
+  root = `https://raw.githubusercontent.com/${params.get("user")}/${params.get("repo")}/${params.get("branch")}`
+}
 const url = `${root}/${params.get("file")}.md`;
 const slides = document.querySelector("#impress");
 
@@ -46,6 +53,7 @@ async function loadMultiple(text) {
 }
 
 function loadFile(name) {
+  console.log(name);
   return fetch(`${root}/${name}.md`).then(function(response) {
     return response.text();
   }).then(function(text) {
