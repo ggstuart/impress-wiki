@@ -10,6 +10,7 @@ body {
   background-size: 250px;
   background-repeat: no-repeat;
   background-position: top right;
+  background-blend-mode: color-dodge;
 }
 
 body.impress-on-overview {
@@ -67,9 +68,17 @@ table {
   border-collapse: collapse;
 }
 
-td {
+hr + table td, hr + table th {
+  border: none;
+}
+
+td, th {
   padding: 0.25em 0.5em;
   border: 1px solid grey;
+}
+
+th img {
+  width: 100%;
 }
 
 .impress-supported .fallback-message {
@@ -239,6 +248,14 @@ body.impress-mobile .step.prev {
 
 
 @media screen and (min-width: 600px) {
+  h1 {
+    font-size: 4em;
+    letter-spacing: 0.1em
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
   .step {
     font-size: 1.5em;
   }
